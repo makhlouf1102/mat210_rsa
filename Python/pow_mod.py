@@ -7,3 +7,4 @@ def pow_mod(a, e, m):
         a = (a * a) % m
         e //= 2
     return result
+
