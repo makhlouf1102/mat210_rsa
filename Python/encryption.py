@@ -3,7 +3,7 @@ from random import randint
 def is_pair(n):
     return n % 2 == 0
 
-def miller_test(n=7, confidance=10):
+def miller_test(n, confidance=10):
 
     if is_pair(n) or n < 3:
         return False
@@ -64,7 +64,7 @@ def mod_inverse(phi, e=65537):
     else:
         return x % phi
 
-# message
+# message (integers only)
 m = 123450249
 
 # generating big prime numbers

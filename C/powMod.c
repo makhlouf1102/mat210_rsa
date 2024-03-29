@@ -2,6 +2,7 @@
 #include <gmp.h>
 #include <time.h>
 
+
 void modular_exponentiation(mpz_t result, const mpz_t base, const mpz_t exponent, const mpz_t modulus) {
     mpz_t a, e, r;
     mpz_init_set(a, base);
@@ -40,10 +41,10 @@ void test_modular_exponentiation() {
     mpz_init(m);
     mpz_init(r);
 
-    for (int i = 0; i < 1000; i++) {
-        mpz_urandomb(a, state, 2000);  // Generate a random 2000-bit number for a
-        mpz_urandomb(e, state, 2000);  // Generate a random 2000-bit number for e
-        mpz_urandomb(m, state, 2000);  // Generate a random 2000-bit number for m
+    for (int i = 0; i < 100; i++) {
+        mpz_urandomb(a, state, 2048);  // Generate a random 2048-bit number for a
+        mpz_urandomb(e, state, 2048);  // Generate a random 2048-bit number for e
+        mpz_urandomb(m, state, 2048);  // Generate a random 2048-bit number for m
         mpz_set_ui(r, 1);  // Set r to 1
 
         modular_exponentiation(r, a, e, m);
